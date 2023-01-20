@@ -23,33 +23,36 @@ h1 {
 	width: 400px;
 }
 
-.btn {
-	color: white;
-	border-radius: 4px;
-	background-color: #333d29;
+button {
+	/* color: white; */
+	/* border-radius: 4px; */
+	/* background-color: #333d29;  */
 	text-align: center;
 	margin: 1px;
 	padding: 7px 0 7px 0;
 	font-weight: bold;
 	font-size: x-large;
+
 }
 
 .display {
+	color: white;
 	grid-column-start: 1;
 	grid-column-end: 4;
 	background-color: black;
 	text-align: end;
 	padding-right: 10px;
+	font-size: x-large;
 }
 
 .operators {
-	background-color: #a4ac86;
+	/* background-color: #a4ac86; */
 }
 
 .equalOp {
-	background-color: #c2c5aa;
+	/* background-color: #c2c5aa; */
 }
 
 .clear {
-	background-color: #656d4a;
+	/* background-color: #656d4a; */
 }
