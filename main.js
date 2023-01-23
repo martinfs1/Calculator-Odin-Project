@@ -25,21 +25,42 @@ const operate = (op, a, b) => {
 };
 console.log(operate("/", 2, 3));
 
-// trying to populate the display in order to do an operation.
-const btns = document.querySelectorAll("button");
-btns.forEach(btn => {
-	btn.addEventListener('click', () => {
-		const dsply = document.querySelector("#dsply");
-		let numA = []
-		if (btn.textContent === 'clear') {
-			dsply.textContent = 0;
-		} else {
-			dsply.textContent = btn.textContent
-		}
-		numA.push(Number(btn.textContent))
+const $dsply = document.querySelector("#dsply");
+function populateDisplay(firstOperands, secondOperands) {
+	$dsply.textContent = firstOperands;
+}
 
-		console.log(numA);
-	})
+// trying to populate the display in order to do a Mathematic operation.
+let firstOperands = []
+let secondOperands = []
+let operator;
+document.addEventListener('click', (e) => {
+
+	if (e.target.textContent === 'clear') {
+		$dsply.textContent = 0;
+		firstOperands = [];
+		secondOperands = [];
+	} else if ((e.target.textContent === '+')
+		|| (e.target.textContent === '-')
+		|| (e.target.textContent === '*')
+		|| (e.target.textContent === '%')) {
+		operator = e.target.textContent;
+	} else if ((operator) && (firstOperands.length >= 0)) {
+
+		secondOperands.push(Number(e.target.textContent))
+		populateDisplay(secondOperands.join(''));
+		console.log(secondOperands);
+
+	} else {
+		firstOperands.push(Number(e.target.textContent))
+		populateDisplay(firstOperands.join(''));
+		console.log(firstOperands);
+	}
+
 })
+
+// operate(operator, firstOperands, secondOperands)
+
+
 
 
